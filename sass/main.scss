@@ -1,0 +1,263 @@
+@charset "utf-8";
+
+
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+// Color Scheme
+$light-blue: #56BBE9;
+$main-blue: #2895C7;
+$dark-blue: #245880;
+$very-dark-blue: #0F2739;
+$light-yellow: #F3F684;
+$mid-yellow: #C6C87B;
+$dark-yellow: #AEB13B;
+$light-grey: #707070;
+$dark-grey: #373737;
+ 
+// Updated Bulma variables
+$family-sans-serif: "Nanum Gothic", sans-serif;
+$title-color: $light-blue;
+$grey-dark: $dark-grey;
+$grey-light: $light-grey;
+$primary: $main-blue; 
+$info: $dark-blue;
+$link: $light-yellow;
+$link-hover: $mid-yellow;
+$text: white;
+
+$navbar-background-color: $dark-blue;
+$navbar-padding-horizontal: 3rem;
+$navbar-item-active-background-color: $main-blue;
+$navbar-item-active-color: white;
+$navbar-item-hover-background-color: $main-blue;
+$navbar-item-hover-color: $light-yellow;
+
+$card-background-color: $dark-blue;
+$card-color: white;
+
+$label-color: white;
+
+$footer-background-color: $dark-blue;
+
+// Update Bulma component variables
+$body-background-color: $dark-grey;
+
+
+@import "../../bulma-0.8.0/bulma.sass";
+
+//!CSS changes
+//General Styles
+.hr {
+    background-color: $dark-yellow;
+    width: 90%;
+    text-align: center;
+    margin: 0.5em auto;
+    height: 3px;
+}
+
+.hr.divider {
+    background-color: $light-blue;
+    width: 95%;
+    margin: 1.5em auto;
+    margin-top: 0;
+} 
+
+.divider.end {
+    position: relative;
+    bottom: 0;
+}
+
+.end-button {
+    margin: 1.5em;
+    margin-bottom: -1em;
+}
+
+.to-upper {
+    text-transform: uppercase;
+    font-size: 0.7em;
+}
+
+.from-tag {
+    text-transform: uppercase;
+}
+
+.social-icon {
+    border: solid 3px white;
+    border-radius: 7px;
+    font-size: 1.2em;
+    margin: 0.3em 0.5em;
+}
+
+
+.tile .title, .tile .title a, .subtitle a, .page-head a {
+    color: white;
+}
+
+.image-credit {
+    font-style: italic;
+}
+
+.section.body {
+    p:not(:last-child, .title, .subtitle) {
+        margin-bottom: 1.5em;
+    }
+}
+
+.card {
+    margin: 1em 3em;
+    height: 100%;
+}
+
+.checkbox:hover {
+    color: $label-color;
+}
+
+//Header Styles
+.page-head {
+    background-color: $main-blue;
+    min-height: 3.25rem;
+    z-index: 30;
+}
+
+.page-head a:hover {
+    color: $light-yellow;
+}
+
+.page-head .level-item {
+    margin: .5em 1em;
+}
+
+.level.page-head:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.navbar, .navbar-menu, .navbar-start, .navbar-end {
+    justify-content: center;
+    background-color: $dark-blue;
+}
+
+.navbar-item.is-active:hover {
+    color: $light-yellow;
+}
+
+.navbar-brand {
+    background-color: $dark-blue;
+}
+
+.navbar-item {
+    padding-left: 3rem;
+    padding-right: 3rem;  
+}
+
+//Article Shelf Styles
+
+.popular-shelf .container {
+    background-color: $dark-blue;
+    margin: 1em 1.2em;
+    padding-bottom: 0.5em;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.popular-shelf .tile-header {
+    margin: 1em;
+    margin-top: auto;
+    padding-top: 0.5em;
+    background-color: $dark-blue;
+
+}
+
+.recent-articles .container{
+    margin-right: 2em;
+}
+
+//Article Style
+.social-share {
+    margin: 1.5em 0;
+}
+
+.publishing-date {
+    margin-top: 1em;
+    font-style: italic;
+}
+
+.main-image.image.is-4by3 {
+    padding-top: 0;
+    width: 100%;
+}
+
+.article-body {
+    padding: 3rem 4.5rem;
+
+    .instructions li {
+        list-style: disc;
+        margin-left: 2.5em;
+        padding-left: 0.5em;
+    }
+}
+
+//Other Styles
+
+
+//Footer Styles
+.footer {
+    padding-bottom: 2.5em;
+}
+
+.footer .social {
+    border-left: $light-blue 2px solid
+}
+
+.end-banner {
+    background-color: $very-dark-blue;
+}
+
+.end-banner a, .end-banner p {
+    margin: 0 3em;
+    color: white;
+}
+
+//Responsive Controls
+.for-tablet {
+    @include until($tablet) {
+        display: none;
+    }
+}
+
+.for-mobile {
+    @include from($tablet) {
+        display: none;
+    }
+}
+
+.search-field:not(.is-active) {
+    @include until($tablet) {
+        display: none;
+    }
+}
+
+.search-field.is-active {
+    @include until($tablet) {
+        position: absolute;
+        top: 3rem;
+        right: 0.1rem; 
+        z-index: 32;
+    }
+}
+
+.footer .social {
+    @include until($tablet) {
+        border-left: none;
+        border-top: solid $light-blue 2px;
+    }
+}
+
+.author-tiles .is-child{
+    @include from($desktop) {
+        max-width: 33%;
+    }
+    
+}
